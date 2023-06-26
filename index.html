@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+   <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+   <script src="https://unpkg.com/vue@2.6.12 "></script>
+   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+               <div id="forms">
+                <form id="msform">
+                  <!-- fieldest -->
+                  <template v-if="!loginForm">
+                  <fieldset id="createAccount">
+                  <h2 class="fs-title">create your account</h2>
+                    <input type="text" placeholder="UserName">  
+                    <input type="password" placeholder="Password" >  
+                    <input type="password" placeholder="Confirm password" > 
+                    <input type="button" class="next action-button" value="Create"> 
+                    <input type="button" class="next action-button" value="login" style="background-color: rgb(211,86, 86);" @click=" loginForm = true">
+                  </fieldset>
+                </template>
+
+                <template v-else-if="loginForm">
+                  <fieldset id="login">
+                    <h2 class="fs-title">Login</h2>
+                    <input type="text" placeholder="UserName">
+                    <input type="text" placeholder="Password">
+                    <input type="button" class="previous action-button" value="Login">
+                    <input type="button"
+                    class="action-button" style="background-color: rgb(211,86, 86) ;" value="Create Acc" @click="loginForm = false">
+
+                  </fieldset>
+                </template>
+
+
+                </form>
+               </div>
+
+
+
+    
+   
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
